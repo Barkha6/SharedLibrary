@@ -7,8 +7,8 @@ pipeline {
 	stage('Git Check Out') {
             steps {
            	gitCheckOut(
-                    branch: "master",
-                    url: "https://github.com/ranvivekjan/SimpleJavamavenApp.git"
+                    branch: "main",
+                    url: "https://github.com/Barkha6/SharedLibrary.git"
                 )
             }
         }
