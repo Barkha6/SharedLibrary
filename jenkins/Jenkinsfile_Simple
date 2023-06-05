@@ -69,7 +69,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t ranjanvivek/hello-world .'
+                    sh 'docker build -t barkhasoni/hello-world .'
                 }
             }
         }
@@ -77,9 +77,9 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u ranjanvivek -p ${dockerhubpwd}'
+                   sh 'docker login -u barkhasoni -p ${dockerhubpwd}'
                    }
-                   sh 'docker push ranjanvivek/hello-world'
+                   sh 'docker push barkhasoni/hello-world'
                 }
             }
         }
@@ -87,10 +87,10 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                        sh 'docker login -u ranjanvivek -p ${dockerhubpwd}'
+                        sh 'docker login -u barkhasoni -p ${dockerhubpwd}'
                    }
-                   //sh 'docker pull ranjanvivek/devops-integration'
-                   sh 'docker container run -d --name=app1 ranjanvivek/hello-world'
+                   //sh 'docker pull barkhasoni/devops-integration'
+                   sh 'docker container run -d --name=app1 barkhasoni/hello-world'
                 }
             }
         } */
