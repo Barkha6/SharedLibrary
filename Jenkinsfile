@@ -1,7 +1,7 @@
 @Library("shared-library") _
 pipeline {
     agent {
-        label 'java-build-node'
+        label 'Built-In Node'
     }
     stages {
 	stage('Git Check Out') {
